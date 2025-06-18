@@ -17,10 +17,6 @@
       font-family: Arial, sans-serif;
     }
 
-    body::before {
-      content: none; /* Remove camada escura */
-    }
-
     body > * {
       position: relative;
       z-index: 1;
@@ -83,23 +79,14 @@
     /* BANNER */
     .banner {
       width: 100%;
-      background-color: #444;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px 0;
-    }
-
-    .banner img {
-      max-width: 90%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      height: 250px; /* Altura do banner */
+      background: url('banner.jpg') center/cover no-repeat;
+      background-color: #444; /* Caso a imagem não carregue */
     }
 
     /* CONTEÚDO */
     .wrapper {
-      min-height: calc(100vh - 260px); /* Ocupa mais altura, considerando header, banner e footer */
+      min-height: calc(100vh - 340px); /* Calcula altura restante considerando header, banner e footer */
       background-color: rgba(255, 255, 255, 0.95);
       margin: 50px auto;
       max-width: 900px;
@@ -186,6 +173,7 @@
 </head>
 <body>
 
+  <!-- TOPO -->
   <header>
     <div class="header-content">
       <h1>Recomendações</h1>
@@ -202,11 +190,10 @@
   </header>
 
   <!-- BANNER -->
-  <div class="banner">
-    <img src="banner.jpg" alt="Banner do Site">
-    <!-- Substitua "banner.jpg" pela sua imagem de banner -->
-  </div>
+  <div class="banner"></div>
+  <!-- Troque 'banner.jpg' pelo nome da sua imagem ou um link -->
 
+  <!-- CONTEÚDO -->
   <div class="wrapper">
     <main>
       <div class="character-gallery-container">
@@ -226,10 +213,12 @@
     </main>
   </div>
 
+  <!-- RODAPÉ -->
   <footer>
     <p>&copy; 2024 Quadro de Recomendações</p>
   </footer>
 
+  <!-- SCRIPT -->
   <script>
     document.querySelectorAll("form").forEach(form => {
       form.addEventListener("submit", e => {
