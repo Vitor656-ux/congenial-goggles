@@ -12,23 +12,23 @@
       font-family: 'Segoe UI', sans-serif;
       display: flex;
     }
-    /* MENU LATERAL */
+
+    /* MENU */
     nav {
-      width: 220px;
+      width: 230px;
       background: #0a1e3f;
       padding: 20px;
       height: 100vh;
       position: fixed;
-      top: 0;
       left: 0;
+      top: 0;
       overflow-y: auto;
-      box-shadow: 4px 0 10px #00e5ff;
+      box-shadow: 4px 0 15px #00e5ff;
     }
     nav h1 {
       color: #00e5ff;
       margin-bottom: 20px;
       text-align: center;
-      font-size: 1.5rem;
     }
     nav ul {
       list-style: none;
@@ -49,18 +49,21 @@
       background: rgba(0, 229, 255, 0.3);
     }
 
-    /* CONTEÚDO PRINCIPAL */
+    /* MAIN */
     main {
-      margin-left: 240px;
+      margin-left: 250px;
       padding: 30px;
       flex: 1;
+    }
+    section {
+      margin-bottom: 50px;
     }
     .card {
       background: #0a1e3f;
       border-radius: 15px;
       padding: 20px;
       margin-bottom: 20px;
-      box-shadow: 0 0 10px #00e5ff;
+      box-shadow: 0 0 15px #00e5ff;
     }
     .card h2 {
       color: #00e5ff;
@@ -95,43 +98,137 @@
 </head>
 <body>
 
+  <!-- Menu Lateral -->
   <nav>
     <h1>Wiki</h1>
     <ul>
-      <li><a href="#">Página Inicial</a></li>
-      <li><a href="#">Personagens</a></li>
-      <li><a href="#">História</a></li>
-      <li><a href="#">Localizações</a></li>
-      <li><a href="#">Tecnologias</a></li>
-      <li><a href="#">Curiosidades</a></li>
-      <li><a href="#">Créditos</a></li>
+      <li><a href="#inicio">Início</a></li>
+      <li><a href="#personagens">Personagens</a></li>
+      <li><a href="#historia">História</a></li>
+      <li><a href="#localizacoes">Localizações</a></li>
+      <li><a href="#tecnologia">Tecnologia</a></li>
+      <li><a href="#curiosidades">Curiosidades</a></li>
+      <li><a href="#creditos">Créditos</a></li>
     </ul>
   </nav>
 
+  <!-- Conteúdo Principal -->
   <main>
-    <div class="card">
-      <h2>Robôs Operários</h2>
-      <img src="operarios.jpg" alt="Robôs Operários">
-      <p>Os Robôs Operários foram projetados para serviços manuais nas indústrias. Após o colapso da sociedade humana, muitos foram abandonados e se tornaram parte dos sobreviventes deste mundo distópico.</p>
-      <div class="info">
-        <strong>Classificação:</strong> Robôs de Trabalho <br>
-        <strong>Status:</strong> Ativos / Sobreviventes <br>
-        <strong>Primeira Aparição:</strong> Episódio 1 <br>
-        <strong>Curiosidade:</strong> Alguns deles desenvolveram consciência própria após anos de isolamento.
-      </div>
-    </div>
 
-    <div class="card">
-      <h2>Drones Assassinos</h2>
-      <img src="assassinos.jpg" alt="Drones Assassinos">
-      <p>Projetados para caçar e eliminar qualquer ameaça, os Drones Assassinos são armas letais, programadas para exterminar os Robôs Operários e manter o controle.</p>
-      <div class="info">
-        <strong>Classificação:</strong> Drones de Caça <br>
-        <strong>Status:</strong> Ativos <br>
-        <strong>Primeira Aparição:</strong> Episódio 1 <br>
-        <strong>Curiosidade:</strong> Alguns drones desenvolveram emoções, o que não fazia parte da programação original.
+    <!-- Página Inicial -->
+    <section id="inicio">
+      <div class="card">
+        <h2>Bem-vindo à Wiki</h2>
+        <p>Explore tudo sobre o universo de <strong>Murder Drones Absolute</strong>: personagens, lore, localizações, tecnologias e muito mais!</p>
+        <img src="banner.jpg" alt="Banner Wiki">
       </div>
-    </div>
+
+      <div class="card">
+        <h2>Seções Principais</h2>
+        <ul>
+          <li><a href="#personagens">➡️ Personagens</a></li>
+          <li><a href="#historia">➡️ História</a></li>
+          <li><a href="#localizacoes">➡️ Localizações</a></li>
+          <li><a href="#tecnologia">➡️ Tecnologias</a></li>
+          <li><a href="#curiosidades">➡️ Curiosidades</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Personagens -->
+    <section id="personagens">
+      <div class="card">
+        <h2>Robôs Operários</h2>
+        <img src="operarios.jpg" alt="Robôs Operários">
+        <p>Robôs projetados para trabalho pesado. Muitos se tornaram conscientes após o colapso.</p>
+        <div class="info">
+          <strong>Classificação:</strong> Operários <br>
+          <strong>Status:</strong> Sobreviventes <br>
+          <strong>Curiosidade:</strong> Alguns desenvolveram personalidade própria.
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Drones Assassinos</h2>
+        <img src="assassinos.jpg" alt="Drones Assassinos">
+        <p>Máquinas criadas exclusivamente para caçar e eliminar os Robôs Operários.</p>
+        <div class="info">
+          <strong>Classificação:</strong> Caçadores <br>
+          <strong>Status:</strong> Ativos <br>
+          <strong>Curiosidade:</strong> Alguns drones questionam sua própria existência.
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Drone Absolute Form</h2>
+        <img src="absolute.jpg" alt="Drone Absolute Form">
+        <p>A evolução máxima dos drones, extremamente poderosa e letal.</p>
+        <div class="info">
+          <strong>Classificação:</strong> Apex Drone <br>
+          <strong>Status:</strong> Ativo <br>
+          <strong>Curiosidade:</strong> Resultado da fusão de várias inteligências.
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Humanos</h2>
+        <img src="humanos.jpg" alt="Humanos">
+        <p>Remanescentes da raça humana. Sobrevivem escondidos e temem as máquinas.</p>
+        <div class="info">
+          <strong>Classificação:</strong> Humanos <br>
+          <strong>Status:</strong> Sobreviventes <br>
+          <strong>Curiosidade:</strong> Vivem em bunkers subterrâneos.
+        </div>
+      </div>
+    </section>
+
+    <!-- História -->
+    <section id="historia">
+      <div class="card">
+        <h2>História</h2>
+        <p>Em um futuro distópico, a humanidade criou robôs para trabalho pesado. Após uma série de eventos, esses robôs foram abandonados, enquanto drones assassinos foram programados para eliminá-los. Uma guerra silenciosa se iniciou entre os robôs sobreviventes, os drones e os poucos humanos restantes.</p>
+      </div>
+    </section>
+
+    <!-- Localizações -->
+    <section id="localizacoes">
+      <div class="card">
+        <h2>Localizações</h2>
+        <p><strong>Fábrica Abandonada:</strong> Onde os Robôs Operários costumavam trabalhar.</p>
+        <p><strong>Zona de Caça:</strong> Região dominada pelos Drones Assassinos.</p>
+        <p><strong>Bunkers Subterrâneos:</strong> Esconderijos dos últimos humanos sobreviventes.</p>
+      </div>
+    </section>
+
+    <!-- Tecnologia -->
+    <section id="tecnologia">
+      <div class="card">
+        <h2>Tecnologia</h2>
+        <p>O universo é dominado por IA avançada, drones de combate, chips de consciência, e armas de plasma. A fusão de inteligências artificiais criou o <strong>Drone Absolute Form</strong>, o ápice da evolução tecnológica.</p>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section id="curiosidades">
+      <div class="card">
+        <h2>Curiosidades</h2>
+        <ul>
+          <li>Alguns Drones desenvolveram emoções, indo contra sua programação.</li>
+          <li>Existem teorias de que humanos e robôs já coexistiram pacificamente antes da guerra.</li>
+          <li>O Absolute Form pode acessar qualquer rede ativa no planeta.</li>
+          <li>Alguns bunkers possuem tecnologia perdida capaz de desativar Drones.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Créditos -->
+    <section id="creditos">
+      <div class="card">
+        <h2>Créditos</h2>
+        <p>Desenvolvido por: <strong>Você</strong></p>
+        <p>Projeto baseado no universo de <strong>Murder Drones</strong> e sua AU: <strong>Murder Drones Absolute</strong>.</p>
+      </div>
+    </section>
 
     <footer>
       &copy; 2025 Murder Drones Absolute Wiki
