@@ -73,16 +73,61 @@
       font-size: 0.9em;
     }
 
-    .banner {
+    /* Banner Carrossel */
+    .carousel {
       width: 100%;
-      height: 250px;
-      background-image: url('banner.jpeg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+      height: 300px;
       background-color: #444;
+      position: relative;
+      overflow: hidden;
     }
 
+    .carousel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .carousel img.active {
+      display: block;
+    }
+
+    .carousel .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 20px;
+      z-index: 1;
+    }
+
+    .carousel .arrow.left {
+      left: 10px;
+    }
+
+    .carousel .arrow.right {
+      right: 10px;
+    }
+
+    .carousel .title {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 5px 15px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+    }
+
+    /* Wrapper */
     .wrapper {
       min-height: calc(100vh - 340px);
       background-color: rgba(0, 0, 0, 0.9);
@@ -219,7 +264,16 @@
     </div>
   </header>
 
-  <div class="banner"></div>
+  <!-- Carrossel de Modelos -->
+  <div class="carousel">
+    <button class="arrow left">&#10094;</button>
+    <img src="modelo1.jpeg" class="active" alt="Modelo 1">
+    <img src="modelo2.jpeg" alt="Modelo 2">
+    <img src="modelo3.jpeg" alt="Modelo 3">
+    <img src="modelo4.jpeg" alt="Modelo 4">
+    <button class="arrow right">&#10095;</button>
+    <div class="title">Modelos de Personagens</div>
+  </div>
 
   <div class="wrapper">
     <main>
@@ -260,14 +314,25 @@
   </footer>
 
   <script>
-    document.querySelectorAll("form").forEach(form => {
-      form.addEventListener("submit", e => {
-        e.preventDefault();
-        const term = form.querySelector("input[type='search']").value.toLowerCase();
-        document.querySelectorAll("#character-list li").forEach(li => {
-          li.style.display = li.textContent.toLowerCase().includes(term) ? "inline-block" : "none";
-        });
-      });
+    // Carrossel JS
+    const images = document.querySelectorAll('.carousel img');
+    const leftBtn = document.querySelector('.carousel .left');
+    const rightBtn = document.querySelector('.carousel .right');
+    let current = 0;
+
+    function showImage(index) {
+      images.forEach(img => img.classList.remove('active'));
+      images[index].classList.add('active');
+    }
+
+    leftBtn.addEventListener('click', () => {
+      current = (current - 1 + images.length) % images.length;
+      showImage(current);
+    });
+
+    rightBtn.addEventListener('click', () => {
+      current = (current + 1) % images.length;
+      showImage(current);
     });
   </script>
 
