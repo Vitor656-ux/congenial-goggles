@@ -2,432 +2,349 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Recomendações - Cartoon Futurista</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recomendações - Modelos</title>
   <style>
-    /* Reset básico */
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
-    html, body {
-      height: 100%;
-      background: #0a1e3f; /* Azul escuro */
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #cce6ff;
-      scroll-behavior: smooth;
+    body {
+      background-color: #050a18; /* Fundo quase preto */
+      color: #cce6ff; /* Texto claro */
+      font-family: 'Segoe UI', sans-serif;
     }
-    /* Menu fixo topo */
     header {
+      width: 100%;
+      background-color: #0a1e3f; /* Azul escuro */
+      padding: 20px;
       position: fixed;
       top: 0;
-      width: 100%;
-      background: #051331; /* Tom mais escuro do azul */
-      padding: 18px 30px;
-      box-shadow: 0 4px 12px rgba(0, 125, 255, 0.5);
+      left: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
       z-index: 1000;
+      box-shadow: 0 0 10px #00e5ff;
       border-radius: 0 0 15px 15px;
-      user-select: none;
     }
     header h1 {
-      font-size: 1.8rem;
-      color: #1affff; /* Azul neon */
-      text-shadow:
-        0 0 5px #1affff,
-        0 0 10px #1affff,
-        0 0 20px #1affff;
-      font-weight: 900;
-      cursor: default;
-      letter-spacing: 2px;
+      color: #00e5ff;
+      text-shadow: 0 0 10px #00e5ff;
     }
     .header-actions {
       display: flex;
+      gap: 10px;
       align-items: center;
-      gap: 12px;
     }
-    .header-actions form input[type="search"] {
-      padding: 7px 14px;
-      font-size: 0.95rem;
-      border-radius: 12px;
-      border: 2px solid #1affff;
-      background: #051331;
+    .header-actions input {
+      padding: 5px 10px;
+      border: 2px solid #00e5ff;
+      background: #0a1e3f;
       color: #cce6ff;
-      outline-offset: 0;
-      transition: border-color 0.3s ease;
-      width: 180px;
-      box-shadow:
-        0 0 5px #1affff;
+      border-radius: 8px;
     }
-    .header-actions form input[type="search"]:focus {
-      border-color: #00ffff;
-      box-shadow:
-        0 0 12px #00ffff;
-    }
-    .header-actions form button {
+    .header-actions button {
       background: #00e5ff;
-      border: none;
-      padding: 7px 16px;
-      border-radius: 12px;
       color: #051331;
-      font-weight: 700;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 8px;
       cursor: pointer;
-      font-size: 0.95rem;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      box-shadow:
-        0 0 8px #00e5ff;
+      font-weight: bold;
     }
-    .header-actions form button:hover {
-      background: #1affff;
-      color: #000;
-      box-shadow:
-        0 0 15px #1affff;
-    }
-    .login-links a {
-      color: #1affff;
-      font-weight: 600;
+    .header-actions a {
+      color: #00e5ff;
       text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
-      user-select: none;
-    }
-    .login-links a:hover {
-      color: #00ffff;
-      text-shadow: 0 0 5px #00ffff;
     }
 
     /* CARROSSEL */
     .carousel {
-      position: relative;
+      margin-top: 100px;
       width: 100%;
-      max-width: 1100px;
-      height: 420px;
-      margin: 100px auto 40px;
-      background: #051331;
+      max-width: 1000px;
+      height: 400px;
+      background: #0a1e3f;
       border-radius: 20px;
-      box-shadow:
-        0 0 20px #1affff,
-        inset 0 0 50px #003366;
+      margin-inline: auto;
+      position: relative;
       overflow: hidden;
-      user-select: none;
+      box-shadow: 0 0 20px #00e5ff;
     }
     .carousel img {
-      position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 0.7s ease;
-      border-radius: 20px;
-      filter: drop-shadow(0 0 8px #00ffff);
+      display: none;
     }
     .carousel img.active {
-      opacity: 1;
-      position: relative;
-      filter: drop-shadow(0 0 15px #00ffff);
-      z-index: 1;
+      display: block;
     }
     .carousel .title {
       position: absolute;
-      bottom: 70px;
+      bottom: 90px;
       left: 50%;
       transform: translateX(-50%);
       color: #00e5ff;
-      font-size: 2.2rem;
-      font-weight: 900;
-      text-shadow:
-        0 0 10px #00e5ff,
-        0 0 20px #1affff;
-      background: rgba(5, 19, 49, 0.75);
-      padding: 10px 30px;
-      border-radius: 30px;
-      user-select: none;
-      max-width: 90%;
-      text-align: center;
-      pointer-events: none;
+      font-size: 2rem;
+      background: rgba(5, 10, 24, 0.7);
+      padding: 5px 20px;
+      border-radius: 20px;
     }
     .carousel .description {
       position: absolute;
-      bottom: 30px;
+      bottom: 60px;
       left: 50%;
       transform: translateX(-50%);
-      color: #99e6ff;
+      background: rgba(5, 10, 24, 0.6);
+      padding: 5px 15px;
+      border-radius: 15px;
       font-size: 1rem;
-      font-weight: 600;
-      text-shadow: 0 0 5px #0099cc;
-      background: rgba(5, 19, 49, 0.6);
-      padding: 8px 20px;
-      border-radius: 20px;
-      max-width: 90%;
-      user-select: none;
-      pointer-events: none;
+      color: #cce6ff;
     }
-    /* Botão ver mais */
-    .btn-vermais {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #00e5ff;
-      border: none;
-      padding: 10px 28px;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #051331;
-      cursor: pointer;
-      box-shadow:
-        0 0 15px #00ffff;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      user-select: none;
-      z-index: 2;
-      text-transform: uppercase;
-      letter-spacing: 1.3px;
-    }
-    .btn-vermais:hover {
-      background: #1affff;
-      color: #000;
-      box-shadow:
-        0 0 25px #1affff;
-    }
-
-    /* Setas */
     .carousel .arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
       background: #00e5ff;
       color: #051331;
-      border-radius: 50%;
       border: none;
-      font-size: 28px;
-      padding: 10px 14px;
+      border-radius: 50%;
+      padding: 10px;
       cursor: pointer;
-      box-shadow:
-        0 0 12px #00ffff;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      user-select: none;
-      z-index: 10;
-    }
-    .carousel .arrow:hover {
-      background: #1affff;
-      color: #000;
-      box-shadow:
-        0 0 22px #1affff;
     }
     .carousel .arrow.left {
-      left: 20px;
+      left: 10px;
     }
     .carousel .arrow.right {
-      right: 20px;
+      right: 10px;
     }
-
-    /* Bolinhas */
     .carousel .dots {
       position: absolute;
       bottom: 10px;
       left: 50%;
       transform: translateX(-50%);
       display: flex;
-      gap: 14px;
-      z-index: 10;
-      user-select: none;
+      gap: 10px;
     }
     .carousel .dot {
-      width: 16px;
-      height: 16px;
+      width: 12px;
+      height: 12px;
+      background: rgba(0, 229, 255, 0.4);
       border-radius: 50%;
-      background: rgba(0, 229, 255, 0.5);
-      box-shadow: 0 0 6px #00e5ff;
       cursor: pointer;
-      transition: transform 0.3s ease, background-color 0.3s ease;
     }
     .carousel .dot.active {
       background: #00e5ff;
-      box-shadow:
-        0 0 20px #00ffff,
-        0 0 28px #1affff;
-      transform: scale(1.3);
-    }
-    .carousel .dot:hover {
-      background: #1affff;
-      box-shadow:
-        0 0 25px #1affff;
-      transform: scale(1.2);
+      box-shadow: 0 0 10px #00e5ff;
     }
 
-    /* Wrapper principal */
+    /* SEÇÕES */
     .wrapper {
-      max-width: 1300px;
-      margin: 0 auto 70px;
-      background: rgba(5, 19, 49, 0.9);
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 30px;
+      background: #0a1e3f;
       border-radius: 20px;
-      padding: 30px 40px 60px;
-      box-shadow:
-        0 0 35px #00e5ff;
-    }
-    main {
-      width: 100%;
-    }
-
-    /* Texto bem-vindo e descrição */
-    .welcome,
-    .description {
-      color: #cce6ff;
-      text-align: right;
-      max-width: 1000px;
-      margin: 40px auto;
-      user-select: none;
+      box-shadow: 0 0 20px #00e5ff;
     }
     .welcome h2,
     .description h2 {
-      font-size: 2rem;
-      font-weight: 900;
-      margin-bottom: 15px;
+      text-align: right;
+      color: #00e5ff;
+      margin-bottom: 10px;
       position: relative;
-      display: inline-block;
-      color: #1affff;
-      text-shadow:
-        0 0 12px #00ffff,
-        0 0 18px #00e5ff;
     }
     .welcome h2::after,
     .description h2::after {
-      content: "";
+      content: '';
       display: block;
       width: 100px;
-      height: 3.5px;
+      height: 3px;
       background: #00e5ff;
-      border-radius: 15px;
-      margin-top: 7px;
+      margin-top: 5px;
       margin-left: auto;
-      box-shadow:
-        0 0 12px #00ffff;
     }
     .welcome p,
     .description p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      max-width: 750px;
-      margin-left: auto;
-      color: #a0dfff;
-      text-shadow: 0 0 7px #0088bb;
-      font-weight: 600;
+      text-align: right;
+      color: #cce6ff;
+      margin-bottom: 20px;
     }
 
-    /* Galeria de personagens */
+    /* GALERIA */
     .character-gallery-container {
       width: 100%;
-      margin-top: 20px;
     }
     .search-form-gallery {
-      margin-bottom: 16px;
       text-align: center;
+      margin-bottom: 20px;
     }
-    .search-form-gallery input[type="search"] {
+    .search-form-gallery input {
       padding: 8px 16px;
-      border-radius: 12px;
+      border-radius: 10px;
       border: 2px solid #00e5ff;
       background: #051331;
       color: #cce6ff;
-      font-size: 1rem;
-      box-shadow: 0 0 12px #00ffff;
-      width: 280px;
-      transition: border-color 0.3s ease;
-      outline-offset: 0;
-    }
-    .search-form-gallery input[type="search"]:focus {
-      border-color: #1affff;
-      box-shadow: 0 0 18px #1affff;
     }
     .search-form-gallery button {
       background: #00e5ff;
       border: none;
-      padding: 9px 26px;
-      border-radius: 14px;
+      padding: 8px 20px;
+      border-radius: 10px;
       color: #051331;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      box-shadow:
-        0 0 15px #00ffff;
-      transition: background-color 0.3s ease, color 0.3s ease;
       margin-left: 10px;
+      cursor: pointer;
+      font-weight: bold;
     }
-    .search-form-gallery button:hover {
-      background: #1affff;
-      color: #000;
-      box-shadow:
-        0 0 25px #1affff;
-    }
-
-    .character-gallery {
-      overflow-x: auto;
-      padding-bottom: 14px;
-      scrollbar-width: thin;
-      scrollbar-color: #00e5ff transparent;
-    }
-    /* Scrollbar personalizado para WebKit */
-    .character-gallery::-webkit-scrollbar {
-      height: 10px;
-    }
-    .character-gallery::-webkit-scrollbar-track {
-      background: transparent;
-    }
-    .character-gallery::-webkit-scrollbar-thumb {
-      background-color: #00e5ff;
-      border-radius: 20px;
-      box-shadow: 0 0 10px #00e5ff;
-    }
-
     .character-gallery ul {
-      list-style: none;
       display: flex;
       gap: 20px;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: center;
+      list-style: none;
       padding: 0;
-      margin: 0;
     }
     .character-gallery li {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
       width: 200px;
       height: 200px;
-      flex: 0 0 auto;
-      box-shadow:
-        0 0 12px #00e5ff;
-      cursor: pointer;
-      transition: transform 0.25s ease;
-      background: #0b2a5a;
-      border: 2px solid transparent;
-      user-select: none;
-    }
-    .character-gallery li:hover {
-      transform: scale(1.08);
-      border-color: #1affff;
-      box-shadow:
-        0 0 30px #00e5ff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 10px #00e5ff;
+      background: #051331;
     }
     .character-gallery li img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 16px;
-      filter: drop-shadow(0 0 6px #00cfff);
-      transition: filter 0.3s ease;
-    }
-    .character-gallery li:hover img {
-      filter: drop-shadow(0 0 14px #00ffff);
     }
     .character-gallery li p {
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      text-align: center;
+      padding: 4px;
       position: absolute;
       bottom: 0;
       width: 100%;
-      text-align
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0a1e3f;
+      color: #00e5ff;
+      box-shadow: 0 0 10px #00e5ff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Modelos</h1>
+    <div class="header-actions">
+      <form>
+        <input type="search" placeholder="Buscar...">
+        <button>OK</button>
+      </form>
+      <div class="login-links">
+        <a href="#">Login</a> | <a href="#">Criar Conta</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="carousel">
+    <button class="arrow left">&#10094;</button>
+    <button class="arrow right">&#10095;</button>
+
+    <img src="operarios.jpg" class="active" alt="Robôs Operários">
+    <img src="assassinos.jpg" alt="Drones Assassinos">
+    <img src="absolute.jpg" alt="Drone Absolute Form">
+    <img src="humanos.jpg" alt="Humanos">
+
+    <div class="title">Robôs Operários</div>
+    <div class="description">Trabalhadores descartados, agora parte da revolução.</div>
+
+    <div class="dots">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <section class="welcome">
+      <h2>Bem-vindo</h2>
+      <p>Explore os modelos de personagens. Cada um possui sua própria história e importância dentro do universo.</p>
+    </section>
+
+    <section class="character-gallery-container">
+      <form class="search-form-gallery">
+        <input type="search" placeholder="Filtrar personagens...">
+        <button>Buscar</button>
+      </form>
+      <div class="character-gallery">
+        <ul id="character-list">
+          <li><img src="operarios.jpg" alt=""><p>Robôs Operários</p></li>
+          <li><img src="assassinos.jpg" alt=""><p>Drones Assassinos</p></li>
+          <li><img src="absolute.jpg" alt=""><p>Drone Absolute Form</p></li>
+          <li><img src="humanos.jpg" alt=""><p>Humanos</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="description">
+      <h2>Sobre</h2>
+      <p>Esses personagens fazem parte de uma sociedade em constante conflito entre máquinas e humanos, cada um lutando por sua sobrevivência.</p>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Quadro de Modelos
+  </footer>
+
+  <script>
+    const images = document.querySelectorAll('.carousel img');
+    const title = document.querySelector('.carousel .title');
+    const desc = document.querySelector('.carousel .description');
+    const dots = document.querySelectorAll('.carousel .dot');
+    const titles = ['Robôs Operários', 'Drones Assassinos', 'Drone Absolute Form', 'Humanos'];
+    const descriptions = [
+      'Trabalhadores descartados, agora parte da revolução.',
+      'Máquinas programadas para caçar e eliminar.',
+      'Forma final, o ápice da destruição tecnológica.',
+      'Última resistência contra as máquinas.'
+    ];
+
+    let index = 0;
+    function showSlide(i) {
+      images.forEach(img => img.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      images[i].classList.add('active');
+      dots[i].classList.add('active');
+      title.textContent = titles[i];
+      desc.textContent = descriptions[i];
+    }
+    document.querySelector('.arrow.left').onclick = () => {
+      index = (index - 1 + images.length) % images.length;
+      showSlide(index);
+    };
+    document.querySelector('.arrow.right').onclick = () => {
+      index = (index + 1) % images.length;
+      showSlide(index);
+    };
+    dots.forEach((dot, i) => {
+      dot.onclick = () => {
+        index = i;
+        showSlide(index);
+      };
+    });
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      showSlide(index);
+    }, 5000);
+  </script>
+
+</body>
+</html>
