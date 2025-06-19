@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Humanos</title>
+<style>
+body {background-color: #f7d702; font-family: Arial, sans-serif; margin: 0;}
+header {background-color: #222; padding: 20px; color: white; text-align: center;}
+.banner {width: 100%; height: 250px; background: url('humanos.jpeg') center/cover no-repeat;}
+.wrapper {max-width: 1200px; margin: 30px auto; background-color: rgba(0,0,0,0.9); border-radius: 20px; padding: 30px; color: white;}
+h1, h2 {border-bottom: 2px solid #f7d702; display: inline-block; padding-bottom: 5px;}
+.gallery {display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;}
+.card {background-color: black; border-radius: 10px; width: 220px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.5); transition: transform 0.3s;}
+.card:hover {transform: scale(1.05);}
+.card img {width: 100%; height: 200px; object-fit: cover;}
+.card p {padding: 10px; text-align: center; background-color: rgba(0,0,0,0.7); margin: 0;}
+footer {background-color: #222; color: white; text-align: center; padding: 15px; margin-top: 40px;}
+</style>
+</head>
+
+<body>
+<header>
+  <h1>Humanos</h1>
+</header>
+
+<div class="banner"></div>
+
+<div class="wrapper">
+  <h2>Lista de Humanos</h2>
+  <div class="gallery">
+    <div class="card"><img src="humano1.jpeg"><p>Humano 1</p></div>
+    <div class="card"><img src="humano2.jpeg"><p>Humano 2</p></div>
+    <div class="card"><img src="humano3.jpeg"><p>Humano 3</p></div>
+    <div class="card"><img src="humano4.jpeg"><p>Humano 4</p></div>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Quadro de Recomendações</p>
+</footer>
+
+<audio autoplay loop hidden>
+  <source src="musica.mp3" type="audio/mpeg">
+</audio>
+</body>
+</html>
