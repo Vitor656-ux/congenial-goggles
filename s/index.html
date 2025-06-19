@@ -6,93 +6,120 @@
   <title>Wiki - Murder Drones Absolute</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      background-color: #050a18;
-      color: #cce6ff;
+      background-color: #020612;
+      color: #e0f7ff;
       font-family: 'Segoe UI', sans-serif;
       display: flex;
     }
 
-    /* MENU */
+    /* MENU LATERAL */
     nav {
-      width: 230px;
-      background: #0a1e3f;
+      width: 240px;
+      background: #0a0f23;
       padding: 20px;
       height: 100vh;
       position: fixed;
       left: 0;
       top: 0;
       overflow-y: auto;
-      box-shadow: 4px 0 15px #00e5ff;
+      box-shadow: 4px 0 20px #00f0ff;
+      border-right: 2px solid #00f0ff;
     }
+
     nav h1 {
-      color: #00e5ff;
-      margin-bottom: 20px;
+      color: #00f0ff;
+      margin-bottom: 25px;
       text-align: center;
+      font-size: 1.7rem;
     }
+
     nav ul {
       list-style: none;
     }
-    nav ul li {
-      margin-bottom: 12px;
-    }
-    nav ul li a {
-      color: #cce6ff;
-      text-decoration: none;
-      background: rgba(0, 229, 255, 0.1);
-      padding: 8px 12px;
-      display: block;
-      border-radius: 8px;
-      transition: background 0.3s;
-    }
-    nav ul li a:hover {
-      background: rgba(0, 229, 255, 0.3);
-    }
 
-    /* MAIN */
-    main {
-      margin-left: 250px;
-      padding: 30px;
-      flex: 1;
-    }
-    section {
-      margin-bottom: 50px;
-    }
-    .card {
-      background: #0a1e3f;
-      border-radius: 15px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 15px #00e5ff;
-    }
-    .card h2 {
-      color: #00e5ff;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #00e5ff;
-      padding-bottom: 5px;
-    }
-    .card img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
-      display: block;
+    nav ul li {
       margin-bottom: 15px;
     }
-    .info {
-      background: #051331;
-      padding: 10px 15px;
+
+    nav ul li a {
+      color: #e0f7ff;
+      text-decoration: none;
+      background: rgba(0, 240, 255, 0.08);
+      padding: 10px 14px;
+      display: block;
       border-radius: 10px;
-      margin-top: 10px;
-      box-shadow: inset 0 0 8px #00e5ff;
+      transition: background 0.3s;
+      border: 1px solid transparent;
     }
+
+    nav ul li a:hover {
+      background: rgba(0, 240, 255, 0.2);
+      border: 1px solid #00f0ff;
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    main {
+      margin-left: 260px;
+      padding: 40px;
+      flex: 1;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    .card {
+      background: #0d152d;
+      border-radius: 20px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 15px #00f0ff;
+      border: 1.5px solid #00f0ff;
+    }
+
+    .card h2 {
+      color: #00f0ff;
+      margin-bottom: 12px;
+      border-bottom: 2px solid #00f0ff;
+      padding-bottom: 6px;
+    }
+
+    .card img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 15px;
+      display: block;
+      margin-bottom: 20px;
+    }
+
+    .info {
+      background: #051023;
+      padding: 12px 18px;
+      border-radius: 12px;
+      margin-top: 15px;
+      box-shadow: inset 0 0 10px #00f0ff;
+      border: 1px solid #00f0ff;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
-      background: #0a1e3f;
-      color: #00e5ff;
+      background: #0a0f23;
+      color: #00f0ff;
       margin-top: 40px;
       border-radius: 15px;
-      box-shadow: 0 0 10px #00e5ff;
+      box-shadow: 0 0 15px #00f0ff;
+      border: 1px solid #00f0ff;
+    }
+
+    a {
+      color: #00f0ff;
+    }
+
+    ul {
+      padding-left: 20px;
     }
   </style>
 </head>
@@ -226,13 +253,14 @@
       <div class="card">
         <h2>Créditos</h2>
         <p>Desenvolvido por: <strong>Você</strong></p>
-        <p>Projeto baseado no universo de <strong>Murder Drones</strong> e sua AU: <strong>Murder Drones Absolute</strong>.</p>
+        <p>Projeto baseado no universo de <strong>Murder Drones</strong> e na AU <strong>Murder Drones Absolute</strong>.</p>
       </div>
     </section>
 
     <footer>
       &copy; 2025 Murder Drones Absolute Wiki
     </footer>
+
   </main>
 
 </body>
