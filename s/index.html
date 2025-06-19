@@ -17,11 +17,6 @@
       font-family: Arial, sans-serif;
     }
 
-    body > * {
-      position: relative;
-      z-index: 1;
-    }
-
     header {
       width: 100%;
       background-color: #222;
@@ -108,7 +103,7 @@
     .welcome,
     .description {
       color: white;
-      text-align: center;
+      text-align: right;
       margin: 30px 0;
       max-width: 1000px;
     }
@@ -117,12 +112,26 @@
     .description h2 {
       font-size: 2rem;
       margin-bottom: 10px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .welcome h2::after,
+    .description h2::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      background-color: #f7d702;
+      margin-top: 5px;
+      margin-left: auto;
     }
 
     .welcome p,
     .description p {
       font-size: 1rem;
       line-height: 1.5;
+      margin-top: 5px;
     }
 
     .character-gallery-container {
@@ -217,7 +226,7 @@
 
       <!-- Bem-vindo -->
       <section class="welcome">
-        <h2>Bem-vindo ao Quadro de Recomendações!</h2>
+        <h2>Bem-vindo ao Quadro de Recomendações</h2>
         <p>Aqui você encontrará os principais personagens deste universo. Explore, descubra e conheça mais sobre cada um deles.</p>
       </section>
 
