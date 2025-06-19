@@ -1,350 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recomendações - Modelos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiki - Murder Drones Absolute</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      background-color: #050a18; /* Fundo quase preto */
-      color: #cce6ff; /* Texto claro */
+      background-color: #050a18;
+      color: #cce6ff;
       font-family: 'Segoe UI', sans-serif;
+      display: flex;
     }
-    header {
-      width: 100%;
-      background-color: #0a1e3f; /* Azul escuro */
+    /* MENU LATERAL */
+    nav {
+      width: 220px;
+      background: #0a1e3f;
       padding: 20px;
+      height: 100vh;
       position: fixed;
       top: 0;
       left: 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      z-index: 1000;
-      box-shadow: 0 0 10px #00e5ff;
-      border-radius: 0 0 15px 15px;
+      overflow-y: auto;
+      box-shadow: 4px 0 10px #00e5ff;
     }
-    header h1 {
+    nav h1 {
       color: #00e5ff;
-      text-shadow: 0 0 10px #00e5ff;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 1.5rem;
     }
-    .header-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
+    nav ul {
+      list-style: none;
     }
-    .header-actions input {
-      padding: 5px 10px;
-      border: 2px solid #00e5ff;
-      background: #0a1e3f;
+    nav ul li {
+      margin-bottom: 12px;
+    }
+    nav ul li a {
       color: #cce6ff;
-      border-radius: 8px;
-    }
-    .header-actions button {
-      background: #00e5ff;
-      color: #051331;
-      border: none;
-      padding: 6px 12px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .header-actions a {
-      color: #00e5ff;
       text-decoration: none;
+      background: rgba(0, 229, 255, 0.1);
+      padding: 8px 12px;
+      display: block;
+      border-radius: 8px;
+      transition: background 0.3s;
+    }
+    nav ul li a:hover {
+      background: rgba(0, 229, 255, 0.3);
     }
 
-    /* CARROSSEL */
-    .carousel {
-      margin-top: 100px;
-      width: 100%;
-      max-width: 1000px;
-      height: 400px;
+    /* CONTEÚDO PRINCIPAL */
+    main {
+      margin-left: 240px;
+      padding: 30px;
+      flex: 1;
+    }
+    .card {
       background: #0a1e3f;
-      border-radius: 20px;
-      margin-inline: auto;
-      position: relative;
-      overflow: hidden;
-      box-shadow: 0 0 20px #00e5ff;
-    }
-    .carousel img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: none;
-    }
-    .carousel img.active {
-      display: block;
-    }
-    .carousel .title {
-      position: absolute;
-      bottom: 90px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #00e5ff;
-      font-size: 2rem;
-      background: rgba(5, 10, 24, 0.7);
-      padding: 5px 20px;
-      border-radius: 20px;
-    }
-    .carousel .description {
-      position: absolute;
-      bottom: 60px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(5, 10, 24, 0.6);
-      padding: 5px 15px;
       border-radius: 15px;
-      font-size: 1rem;
-      color: #cce6ff;
-    }
-    .carousel .arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #00e5ff;
-      color: #051331;
-      border: none;
-      border-radius: 50%;
-      padding: 10px;
-      cursor: pointer;
-    }
-    .carousel .arrow.left {
-      left: 10px;
-    }
-    .carousel .arrow.right {
-      right: 10px;
-    }
-    .carousel .dots {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-    }
-    .carousel .dot {
-      width: 12px;
-      height: 12px;
-      background: rgba(0, 229, 255, 0.4);
-      border-radius: 50%;
-      cursor: pointer;
-    }
-    .carousel .dot.active {
-      background: #00e5ff;
+      padding: 20px;
+      margin-bottom: 20px;
       box-shadow: 0 0 10px #00e5ff;
     }
-
-    /* SEÇÕES */
-    .wrapper {
-      max-width: 1200px;
-      margin: 50px auto;
-      padding: 30px;
-      background: #0a1e3f;
-      border-radius: 20px;
-      box-shadow: 0 0 20px #00e5ff;
-    }
-    .welcome h2,
-    .description h2 {
-      text-align: right;
+    .card h2 {
       color: #00e5ff;
       margin-bottom: 10px;
-      position: relative;
+      border-bottom: 2px solid #00e5ff;
+      padding-bottom: 5px;
     }
-    .welcome h2::after,
-    .description h2::after {
-      content: '';
+    .card img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
       display: block;
-      width: 100px;
-      height: 3px;
-      background: #00e5ff;
-      margin-top: 5px;
-      margin-left: auto;
+      margin-bottom: 15px;
     }
-    .welcome p,
-    .description p {
-      text-align: right;
-      color: #cce6ff;
-      margin-bottom: 20px;
-    }
-
-    /* GALERIA */
-    .character-gallery-container {
-      width: 100%;
-    }
-    .search-form-gallery {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .search-form-gallery input {
-      padding: 8px 16px;
-      border-radius: 10px;
-      border: 2px solid #00e5ff;
+    .info {
       background: #051331;
-      color: #cce6ff;
-    }
-    .search-form-gallery button {
-      background: #00e5ff;
-      border: none;
-      padding: 8px 20px;
+      padding: 10px 15px;
       border-radius: 10px;
-      color: #051331;
-      margin-left: 10px;
-      cursor: pointer;
-      font-weight: bold;
+      margin-top: 10px;
+      box-shadow: inset 0 0 8px #00e5ff;
     }
-    .character-gallery ul {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      list-style: none;
-      padding: 0;
-    }
-    .character-gallery li {
-      width: 200px;
-      height: 200px;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 0 10px #00e5ff;
-      background: #051331;
-    }
-    .character-gallery li img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .character-gallery li p {
-      background: rgba(0, 0, 0, 0.6);
-      color: #fff;
-      text-align: center;
-      padding: 4px;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-    }
-
     footer {
       text-align: center;
       padding: 20px;
       background: #0a1e3f;
       color: #00e5ff;
+      margin-top: 40px;
+      border-radius: 15px;
       box-shadow: 0 0 10px #00e5ff;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Modelos</h1>
-    <div class="header-actions">
-      <form>
-        <input type="search" placeholder="Buscar...">
-        <button>OK</button>
-      </form>
-      <div class="login-links">
-        <a href="#">Login</a> | <a href="#">Criar Conta</a>
+  <nav>
+    <h1>Wiki</h1>
+    <ul>
+      <li><a href="#">Página Inicial</a></li>
+      <li><a href="#">Personagens</a></li>
+      <li><a href="#">História</a></li>
+      <li><a href="#">Localizações</a></li>
+      <li><a href="#">Tecnologias</a></li>
+      <li><a href="#">Curiosidades</a></li>
+      <li><a href="#">Créditos</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="card">
+      <h2>Robôs Operários</h2>
+      <img src="operarios.jpg" alt="Robôs Operários">
+      <p>Os Robôs Operários foram projetados para serviços manuais nas indústrias. Após o colapso da sociedade humana, muitos foram abandonados e se tornaram parte dos sobreviventes deste mundo distópico.</p>
+      <div class="info">
+        <strong>Classificação:</strong> Robôs de Trabalho <br>
+        <strong>Status:</strong> Ativos / Sobreviventes <br>
+        <strong>Primeira Aparição:</strong> Episódio 1 <br>
+        <strong>Curiosidade:</strong> Alguns deles desenvolveram consciência própria após anos de isolamento.
       </div>
     </div>
-  </header>
 
-  <div class="carousel">
-    <button class="arrow left">&#10094;</button>
-    <button class="arrow right">&#10095;</button>
-
-    <img src="operarios.jpg" class="active" alt="Robôs Operários">
-    <img src="assassinos.jpg" alt="Drones Assassinos">
-    <img src="absolute.jpg" alt="Drone Absolute Form">
-    <img src="humanos.jpg" alt="Humanos">
-
-    <div class="title">Robôs Operários</div>
-    <div class="description">Trabalhadores descartados, agora parte da revolução.</div>
-
-    <div class="dots">
-      <div class="dot active"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-      <div class="dot"></div>
-    </div>
-  </div>
-
-  <div class="wrapper">
-    <section class="welcome">
-      <h2>Bem-vindo</h2>
-      <p>Explore os modelos de personagens. Cada um possui sua própria história e importância dentro do universo.</p>
-    </section>
-
-    <section class="character-gallery-container">
-      <form class="search-form-gallery">
-        <input type="search" placeholder="Filtrar personagens...">
-        <button>Buscar</button>
-      </form>
-      <div class="character-gallery">
-        <ul id="character-list">
-          <li><img src="operarios.jpg" alt=""><p>Robôs Operários</p></li>
-          <li><img src="assassinos.jpg" alt=""><p>Drones Assassinos</p></li>
-          <li><img src="absolute.jpg" alt=""><p>Drone Absolute Form</p></li>
-          <li><img src="humanos.jpg" alt=""><p>Humanos</p></li>
-        </ul>
+    <div class="card">
+      <h2>Drones Assassinos</h2>
+      <img src="assassinos.jpg" alt="Drones Assassinos">
+      <p>Projetados para caçar e eliminar qualquer ameaça, os Drones Assassinos são armas letais, programadas para exterminar os Robôs Operários e manter o controle.</p>
+      <div class="info">
+        <strong>Classificação:</strong> Drones de Caça <br>
+        <strong>Status:</strong> Ativos <br>
+        <strong>Primeira Aparição:</strong> Episódio 1 <br>
+        <strong>Curiosidade:</strong> Alguns drones desenvolveram emoções, o que não fazia parte da programação original.
       </div>
-    </section>
+    </div>
 
-    <section class="description">
-      <h2>Sobre</h2>
-      <p>Esses personagens fazem parte de uma sociedade em constante conflito entre máquinas e humanos, cada um lutando por sua sobrevivência.</p>
-    </section>
-  </div>
-
-  <footer>
-    &copy; 2025 Quadro de Modelos
-  </footer>
-
-  <script>
-    const images = document.querySelectorAll('.carousel img');
-    const title = document.querySelector('.carousel .title');
-    const desc = document.querySelector('.carousel .description');
-    const dots = document.querySelectorAll('.carousel .dot');
-    const titles = ['Robôs Operários', 'Drones Assassinos', 'Drone Absolute Form', 'Humanos'];
-    const descriptions = [
-      'Trabalhadores descartados, agora parte da revolução.',
-      'Máquinas programadas para caçar e eliminar.',
-      'Forma final, o ápice da destruição tecnológica.',
-      'Última resistência contra as máquinas.'
-    ];
-
-    let index = 0;
-    function showSlide(i) {
-      images.forEach(img => img.classList.remove('active'));
-      dots.forEach(dot => dot.classList.remove('active'));
-      images[i].classList.add('active');
-      dots[i].classList.add('active');
-      title.textContent = titles[i];
-      desc.textContent = descriptions[i];
-    }
-    document.querySelector('.arrow.left').onclick = () => {
-      index = (index - 1 + images.length) % images.length;
-      showSlide(index);
-    };
-    document.querySelector('.arrow.right').onclick = () => {
-      index = (index + 1) % images.length;
-      showSlide(index);
-    };
-    dots.forEach((dot, i) => {
-      dot.onclick = () => {
-        index = i;
-        showSlide(index);
-      };
-    });
-    setInterval(() => {
-      index = (index + 1) % images.length;
-      showSlide(index);
-    }, 5000);
-  </script>
+    <footer>
+      &copy; 2025 Murder Drones Absolute Wiki
+    </footer>
+  </main>
 
 </body>
 </html>
