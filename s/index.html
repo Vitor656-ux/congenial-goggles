@@ -275,15 +275,15 @@
     </div>
   </header>
 
-  <!-- 🚩 Carrossel no lugar do banner -->
+  <!-- 🚩 Carrossel com títulos dinâmicos -->
   <div class="carousel">
     <button class="arrow left">&#10094;</button>
-    <img src="modelo1.jpeg" class="active" alt="Modelo 1">
-    <img src="modelo2.jpeg" alt="Modelo 2">
-    <img src="modelo3.jpeg" alt="Modelo 3">
-    <img src="modelo4.jpeg" alt="Modelo 4">
+    <img src="robôs operários.jpeg" class="active" alt="Robôs Operários">
+    <img src="drones assassinos.jpeg" alt="Drones Assassinos">
+    <img src="drones(absolute form).jpeg" alt="Drone Absolute Form">
+    <img src="humanos.jpeg" alt="Humanos">
     <button class="arrow right">&#10095;</button>
-    <div class="title">Modelos de Personagens</div>
+    <div class="title" id="carousel-title">Robôs Operários</div>
   </div>
 
   <div class="wrapper">
@@ -329,11 +329,21 @@
     const images = document.querySelectorAll('.carousel img');
     const leftBtn = document.querySelector('.carousel .left');
     const rightBtn = document.querySelector('.carousel .right');
+    const title = document.getElementById('carousel-title');
+
+    const titles = [
+      "Robôs Operários",
+      "Drones Assassinos",
+      "Drone Absolute Form",
+      "Humanos"
+    ];
+
     let current = 0;
 
     function showImage(index) {
       images.forEach(img => img.classList.remove('active'));
       images[index].classList.add('active');
+      title.textContent = titles[index];
     }
 
     leftBtn.addEventListener('click', () => {
