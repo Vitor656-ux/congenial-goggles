@@ -13,7 +13,7 @@
 
     html, body {
       height: 100%;
-      background-color: #f7d702; /* Fundo amarelo */
+      background-color: #f7d702;
       font-family: Arial, sans-serif;
     }
 
@@ -22,11 +22,13 @@
       z-index: 1;
     }
 
-    /* HEADER */
     header {
       width: 100%;
       background-color: #222;
       padding: 20px;
+      position: absolute;
+      top: 0;
+      z-index: 2;
     }
 
     .header-content {
@@ -76,20 +78,22 @@
       font-size: 0.9em;
     }
 
-    /* BANNER */
     .banner {
-      width: 100%;
-      height: 250px; /* Altura do banner */
-      background: url('banner.jpg') center/cover no-repeat;
-      background-color: #444; /* Caso a imagem não carregue */
-    }
+  width: 100%;
+  height: 250px; /* Mantém a altura original do banner */
+  background-image: url('banner.jpeg');
+  background-size: cover;         /* Faz a imagem cobrir toda a área */
+  background-position: center;    /* Centraliza a imagem */
+  background-repeat: no-repeat;   /* Impede que a imagem se repita */
+  background-color: #444;         /* Caso a imagem não carregue */
+}
 
-    /* CONTEÚDO */
+
     .wrapper {
-      min-height: calc(100vh - 340px); /* Calcula altura restante considerando header, banner e footer */
-      background-color: rgba(255, 255, 255, 0.95);
+      min-height: calc(100vh - 340px);
+      background-color: rgba(0, 0, 0, 0.9);
       margin: 50px auto;
-      max-width: 900px;
+      max-width: 1300px;
       padding: 30px;
       border-radius: 20px;
       display: flex;
@@ -160,7 +164,6 @@
       transform: scale(1.05);
     }
 
-    /* FOOTER */
     footer {
       width: 100%;
       background-color: #222;
@@ -173,7 +176,6 @@
 </head>
 <body>
 
-  <!-- TOPO -->
   <header>
     <div class="header-content">
       <h1>Recomendações</h1>
@@ -189,11 +191,8 @@
     </div>
   </header>
 
-  <!-- BANNER -->
   <div class="banner"></div>
-  <!-- Troque 'banner.jpg' pelo nome da sua imagem ou um link -->
 
-  <!-- CONTEÚDO -->
   <div class="wrapper">
     <main>
       <div class="character-gallery-container">
@@ -213,12 +212,10 @@
     </main>
   </div>
 
-  <!-- RODAPÉ -->
   <footer>
     <p>&copy; 2024 Quadro de Recomendações</p>
   </footer>
 
-  <!-- SCRIPT -->
   <script>
     document.querySelectorAll("form").forEach(form => {
       form.addEventListener("submit", e => {
